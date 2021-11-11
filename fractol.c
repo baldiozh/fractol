@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/11 18:09:23 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/11 18:42:15 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	fractal.img.addr = mlx_get_data_addr(fractal.img.img, &fractal.img.bits_per_pixel, &fractal.img.line_length, &fractal.img.endian);
 	
 	if (argc != 2)
-		Error("Enter a name.\n");
+		Error("\x1b[1;31mEnter a name.\n");
 	// if (ft_strncmp(argv[3], "mandelbrot", 10) == 0)
 	// 	mandelbrot();
 	
