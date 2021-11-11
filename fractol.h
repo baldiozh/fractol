@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/11 18:05:35 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/11 18:59:33 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,23 @@ typedef struct	s_image {
 	int		endian;
 }				t_image;
 
-typedef struct	s_complex {
-	double	im;
-	double	re;
-}				t_complex;
+// typedef struct	s_complex {
+// 	double	im;
+// 	double	re;
+// }				t_complex;
 
 typedef struct	s_fractal {
 	void		*win;
 	void		*mlx;
 	t_image		img;
-	t_complex	C;
-	t_complex	Z;
-	t_complex	min;
-	t_complex	max;
+	char		*name;
+	int			i;
+	int			x;
+	int			y;
+	double		c_re;
+	double		c_im;
+	double		z_re;
+	double		z_im;
 	int			max_iter;
 	
 }				t_fractal;
