@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/11 18:59:33 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:21:53 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # define WIGHT 800
 # define HEIGHT 800
 
-# include <math.h>
 # include "mlx/mlx.h"
+
+# include <math.h>
 # include <unistd.h>
 # include <stdlib.h>
-
 # include <stdio.h>
 
 typedef struct	s_image {
@@ -37,9 +37,9 @@ typedef struct	s_image {
 // }				t_complex;
 
 typedef struct	s_fractal {
-	void		*win;
 	void		*mlx;
-	t_image		img;
+	void		*win;
+	t_image		image;
 	char		*name;
 	int			i;
 	int			x;
@@ -56,8 +56,8 @@ typedef struct	s_fractal {
 void	ft_putstr(char *s);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 
-/* */
-
+/* utils */
+void	Error(char *str);
 
 
 #endif

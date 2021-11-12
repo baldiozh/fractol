@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/11 19:01:40 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:21:47 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,31 @@ void	Error(char *str)
 	exit (EXIT_FAILURE);
 }
 
-// void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
+void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = image->addr + (y * image->line_length + x * (image->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
+}
+
+// void	NameOfFractal(t_fractal *f) 
 // {
-// 	char	*dst;
-
-// 	dst = image->addr + (y * image->line_length + x * (image->bits_per_pixel / 8));
-// 	*(unsigned int*)dst = color;
-// }
-
-
-// void	NameOfFractal(t_fractal *fractal) 
-// {
-// 	if (ft_strncmp(fractal->name, "mandelbrot", 10) == 0)
+// 	if (ft_strncmp(f->name, "mandelbrot", 10) == 0)
 // 		mandelbrot();
-// 	else if(ft_strncmp(fractal->name, "julia", 5) == 0)
+// 	else if(ft_strncmp(f->name, "julia", 5) == 0)
 // 		julia();
 // }
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
-	t_fractal fractal;
-	
-	fractal.mlx = mlx_init();
-	fractal.win = mlx_new_window(fractal.mlx, 800, 800, "fract-ol");
-	fractal.img.img = mlx_new_image(fractal.mlx, 800, 800);
-	fractal.img.addr = mlx_get_data_addr(fractal.img.img, &fractal.img.bits_per_pixel, &fractal.img.line_length, &fractal.img.endian);
+	t_fractal *f;
+
 	
 	if (argc != 2)
 		Error("\x1b[1;31mEnter a name.\n");
-	fractal.name = argv[1];
+	f = FractalInit(argv[1]);
+	f->image = ImageInit(f->mlx);
 	// int y = 0;
 	// int x = 0;
 	// /* white window */
@@ -73,7 +67,7 @@ int	main(int argc, char **argv)
 	// 	y++;
 	// }
 	
-	mlx_put_image_to_window(fractal.mlx, fractal.win, fractal.img.img, 0, 0);
-	mlx_loop(fractal.mlx);
+	// mlx_put_image_to_window(f->mlx, f->win, f->img->img, 0, 0);
+	mlx_loop(f->mlx);
 	return (0);
 }

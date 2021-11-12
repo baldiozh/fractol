@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 16:23:40 by gmckinle         ###   ########.fr       */
+/*   Created: 2021/11/12 15:22:51 by gmckinle          #+#    #+#             */
+/*   Updated: 2021/11/12 15:23:04 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	mandelbrot(t_fractal *f)
+void	Error(char *str)
 {
-	
-	
-	mlx_put_image_to_window(f->mlx, f->win, f->image->img, 0, 0);
+	ft_putstr(str);
+	exit (EXIT_FAILURE);
 }
