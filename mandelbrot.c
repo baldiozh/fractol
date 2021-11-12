@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 16:54:35 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:23:33 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	mandelbrot(t_fractal *f)
 	while(f->y < HEIGHT)
 	{
 		f->x = 0;
-		while(f->x < WIGHT)
+		while(f->x < WIDTH)
 		{
 			my_mlx_pixel_put(&f->image, f->x, f->y, 0X00FFF0F0);
 			f->x++;

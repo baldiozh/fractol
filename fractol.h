@@ -6,14 +6,14 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 17:02:36 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:23:08 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIGHT 800
+# define WIDTH 800
 # define HEIGHT 800
 
 # include "mlx/mlx.h"
