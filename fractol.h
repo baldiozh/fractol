@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 16:58:36 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:02:36 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,8 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 /* utils */
 void	Error(char *str);
 void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
+
+/* fractals */
+void	mandelbrot(t_fractal *f);
 
 #endif
