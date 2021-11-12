@@ -6,9 +6,15 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:43:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/11 19:44:04 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 19:23:16 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+void	julia(t_fractal *f)
+{
+	
+	
+	mlx_put_image_to_window(f->mlx, f->win, f->image.img, 0, 0);
+}

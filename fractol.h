@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 18:49:59 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 19:23:35 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct	s_fractal {
 	void		*win;
 	t_image		image;
 	char		*name;
+	int			iter;
 	int			max_iter;
 	int			x;
 	int			y;
