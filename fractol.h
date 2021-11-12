@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 17:23:08 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:49:59 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ typedef struct	s_fractal {
 	int			max_iter;
 	int			x;
 	int			y;
-	t_complex	C;
-	t_complex	Z;
+	t_complex	factor;
+	t_complex	c;
+	t_complex	z;
 	t_complex	min;
 	t_complex	max;
 	

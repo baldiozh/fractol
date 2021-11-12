@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 17:23:16 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:40:52 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_fractal	*FractalInit(char *argv)
 	f->max_iter = 50;
 	f->x = 0;
 	f->y = 0;
-	//C Z
+	// f->Z = ComplexInit(c.re, c.im);
 	f->min = ComplexInit(-2.0, -2.0);
 	f->max.re = 2.0;
 	f->max.im = f->min.im + (f->max.re - f->min.re) * (HEIGHT / WIDTH);
