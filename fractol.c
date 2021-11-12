@@ -6,25 +6,11 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 16:21:47 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:00:00 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-void	Error(char *str)
-{
-	ft_putstr(str);
-	exit (EXIT_FAILURE);
-}
-
-void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = image->addr + (y * image->line_length + x * (image->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
-}
 
 // void	NameOfFractal(t_fractal *f) 
 // {
@@ -42,7 +28,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		Error("\x1b[1;31mEnter a name.\n");
 	f = FractalInit(argv[1]);
-	f->image = ImageInit(f->mlx);
+
 	// int y = 0;
 	// int x = 0;
 	// /* white window */
@@ -67,7 +53,6 @@ int	main(int argc, char **argv)
 	// 	y++;
 	// }
 	
-	// mlx_put_image_to_window(f->mlx, f->win, f->img->img, 0, 0);
 	mlx_loop(f->mlx);
 	return (0);
 }

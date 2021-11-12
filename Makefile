@@ -1,6 +1,6 @@
 NAME		=	fractol
 
-SRC			= 	fractol.c ft_putstr.c ft_strcmp.c mandelbrot.c
+SRC			= 	fractol.c ft_putstr.c ft_strcmp.c mandelbrot.c utils.c init.c
 
 OBJ			=	${SRC:.c=.o}
 
