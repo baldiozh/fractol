@@ -6,15 +6,15 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 19:23:35 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:02:56 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 900
+# define HEIGHT 900
 
 # include "mlx/mlx.h"
 
@@ -45,6 +45,7 @@ typedef struct	s_fractal {
 	int			max_iter;
 	int			x;
 	int			y;
+	int			color;
 	t_complex	factor;
 	t_complex	c;
 	t_complex	z;
@@ -65,6 +66,8 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 /* utils */
 void	Error(char *str);
 void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
+
+void	colors(t_fractal *f);
 
 /* fractals */
 void	mandelbrot(t_fractal *f);

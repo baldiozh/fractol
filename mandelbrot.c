@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 19:27:54 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/13 17:24:06 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	mandelbrot(t_fractal *f)
 			}
 			// Установка цвета точки
 			if (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) > 4)
-				my_mlx_pixel_put(&f->image, f->x, f->y, 0x87ceeb);
+				colors(f);
 			f->x++;
 		}
 		f->y++;
