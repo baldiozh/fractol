@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/13 18:02:56 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/25 21:48:52 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "mlx/mlx.h"
 
 # include <math.h>
+# include <limits.h> ////
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -59,15 +60,15 @@ t_image		*ImageInit(void *mlx);
 t_complex	ComplexInit(double re, double im);
 t_fractal	*FractalInit(char *argv);
 
-/* libft */
-void	ft_putstr(char *s);
-int		ft_strncmp(const char *str1, const char *str2, size_t n);
-
 /* utils */
 void	Error(char *str);
 void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 
 void	colors(t_fractal *f);
+
+int		key_press(int keycode, t_fractal *f);
+
+void    help();
 
 /* fractals */
 void	mandelbrot(t_fractal *f);

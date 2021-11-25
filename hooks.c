@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 18:03:59 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/11 18:05:22 by gmckinle         ###   ########.fr       */
+/*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
+/*   Updated: 2021/11/25 21:30:41 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_putstr(char *s)
+int	key_press(int keycode, t_fractal *f)
 {
-	int	i;
+	if (keycode == 53)
+        exit(0);
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
+    return (0);
 }

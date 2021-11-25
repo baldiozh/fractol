@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/12 17:03:45 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/25 21:42:57 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 		Error("\x1b[1;31mEnter a name.\n");
 	f = FractalInit(argv[1]);
 	NameOfFractal(f);
-	
-	mlx_loop(f->mlx);
+	mlx_hook(f->win, 2, 0, key_press, f);
+	help();
+	mlx_loop(f->mlx);	
 	return (0);
 }

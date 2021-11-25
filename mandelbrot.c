@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/13 17:24:06 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/25 21:34:08 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ void	mandelbrot(t_fractal *f)
 		}
 		f->y++;
 	}
-	
 	mlx_put_image_to_window(f->mlx, f->win, f->image.img, 0, 0);
 }

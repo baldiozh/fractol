@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.c                                           :+:      :+:    :+:   */
+/*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 20:18:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/25 20:46:11 by gmckinle         ###   ########.fr       */
+/*   Created: 2021/11/25 21:36:39 by gmckinle          #+#    #+#             */
+/*   Updated: 2021/11/25 21:42:08 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void    events(t_fractal *f, void (*func)(void))
+void    help()
 {
-    mlx_hook(f->win, 2, 0, func, f);
-    mlx_loop(f->mlx);
-    
-}
-
-void     close(int keycode, t_fractal *f)
-{
-    mlx_destroy_window(f->mlx, f->win);
+    ft_putstr_fd("KEYS FOR USING PROGRAM\n", 1);
+    ft_putstr_fd("Exit             [esc]\n", 1);
 }
