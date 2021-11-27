@@ -1,35 +1,31 @@
 NAME		=	fractol
 
 SRC			= 	fractol.c \
+				ft_putchar_fd ft_atoi.c
 				mandelbrot.c \
 				utils.c init.c colors.c hooks.c help.c
 
 OBJ			=	$(SRC:.c=.o)
 
-CFLAGS		=	gcc -Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra
 MLXFLAGS	=	-framework OpenGL -framework AppKit
 
 HEADERS		=	fractol.h -I mlx -I libft
 
-MLX			=	libmlx.a
+all:		$(NAME) mlx 
 
-LIBFT		=	libft.a
+$(NAME):	$(MLX) $(OBJ) $(HEADERS)
+			gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) -o $(NAME)
+ 
 
-all:		$(NAME)
-
-$(NAME):	$(MLX) $(LIBFT) $(OBJ) $(HEADERS)
-			$(CFLAGS) mlx/libmlx.a libft/libft.a $(OBJ) $(MLXFLAGS) -o $(NAME)
-
-$(MLX):
+MLX:		
 			make -C mlx
 
-$(LIBFT):	make -C libft
-
 clean:
-			rm -rf $(OBJ) mlx/*.o libft/*.o
+			rm -rf $(OBJ) mlx/*.o 
 
 fclean: 	clean
-			rm -rf $(NAME) mlx/libmlx.a libft/libft.a
+			rm -rf $(NAME) mlx/libmlx.a
 
 re: 		fclean all
 			
