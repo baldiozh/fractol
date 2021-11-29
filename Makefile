@@ -8,7 +8,6 @@ OBJ			=	$(patsubst %.c,%.o,$(SRC))
 
 CFLAGS		=	-Wall -Werror -Wextra -I./libft
 MLXFLAGS	=	-Lmlx -lmlx -framework OpenGL -framework AppKit
-
 #HEADERS		=	fractol.h mlx/mlx.h
 
 
@@ -17,13 +16,11 @@ all:
 			@make -C ./mlx/
 			@make $(NAME)
 
-
 $(NAME):	$(OBJ)
 			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -o $(NAME)
 
 %.o : 		%.c 
 			@gcc $(CFLAGS) -c $< -o $@
-
 
 clean:
 			@rm -rf $(OBJ)
@@ -33,7 +30,6 @@ clean:
 fclean: 	clean
 			@rm -rf $(NAME)
 			@make fclean -C ./libft/
-			
 
 re: 		fclean all
 			
