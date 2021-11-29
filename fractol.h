@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/25 21:48:52 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:10:06 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define HEIGHT 900
 
 # include "mlx/mlx.h"
+# include "libft/libft.h"
 
 # include <math.h>
 # include <limits.h> ////
