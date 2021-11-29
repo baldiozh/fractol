@@ -14,6 +14,7 @@ MLXFLAGS	=	-Lmlx -lmlx -framework OpenGL -framework AppKit
 
 all:
 			@make -C ./libft/
+			@make -C ./mlx/
 			@make $(NAME)
 
 
@@ -27,10 +28,12 @@ $(NAME):	$(OBJ)
 clean:
 			@rm -rf $(OBJ)
 			@make clean -C ./libft/
+			@make clean -C ./mlx/
 
 fclean: 	clean
 			@rm -rf $(NAME)
 			@make fclean -C ./libft/
+			
 
 re: 		fclean all
 			
