@@ -6,26 +6,26 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/13 19:09:45 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/30 18:59:10 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_image		*ImageInit(void *mlx)
+t_image		*image_init(void *mlx)
 {
 	t_image	*image;
 	
 	image = (t_image *)malloc(sizeof(t_image));
 	if (!image)
-		Error("\x1b[31mImage's memory allocation error.\n");
+		error("\x1b[31mImage's memory allocation error.\n");
 	image->img = mlx_new_image(mlx, WIDTH, HEIGHT);
 	image->addr = mlx_get_data_addr(image->img, &image->bits_per_pixel, &image->line_length, &image->endian);
 	return (image);
 }
 
 
-t_complex	ComplexInit(double re, double im)
+t_complex	complex_init(double re, double im)
 {
     t_complex complex;
     
@@ -34,24 +34,27 @@ t_complex	ComplexInit(double re, double im)
     return (complex);
 }
 
-t_fractal	*FractalInit(char *argv)
+t_fractal	*fractal_init(char *argv)
 {
 	t_fractal *f;
 
 	f = (t_fractal *)malloc(sizeof(t_fractal));
 	if (!f)
-		Error("\x1b[31mFractals's memory allocation error.\n");
+		error("\x1b[31mFractals's memory allocation error.\n");
 	f->mlx = mlx_init();
 	f->win = mlx_new_window(f->mlx, WIDTH, HEIGHT, argv);
-	f->image = *ImageInit(f->mlx);
+	f->image = *image_init(f->mlx);
 	f->name = argv;
 	f->iter = 0;
 	f->max_iter = 100;
 	f->x = 0;
 	f->y = 0;
 	f->color = 0;
-	f->min = ComplexInit(-2.0, -2.0);
+	f->k = complex_init(-0.4, 0.6);
+	f->min = complex_init(-2.0, -2.0);
 	f->max.re = 2.0;
 	f->max.im = f->min.im + (f->max.re - f->min.re) * (HEIGHT / WIDTH);
+	f->factor = complex_init((f->max.re - f->min.re) / (WIDTH - 1),
+		(f->max.im - f->min.im) / (HEIGHT - 1));
 	return (f);
 }

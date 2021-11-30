@@ -1,7 +1,7 @@
 NAME		=	fractol
 
 SRC			= 	fractol.c \
-				mandelbrot.c \
+				mandelbrot.c julia.c \
 				utils.c init.c colors.c hooks.c help.c
 
 OBJ			=	$(patsubst %.c,%.o,$(SRC))

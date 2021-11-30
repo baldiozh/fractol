@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/29 17:10:06 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/30 18:38:39 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "libft/libft.h"
 
 # include <math.h>
-# include <limits.h> ////
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -51,18 +50,19 @@ typedef struct	s_fractal {
 	t_complex	factor;
 	t_complex	c;
 	t_complex	z;
+	t_complex	k;
 	t_complex	min;
 	t_complex	max;
 	
 }				t_fractal;
 
 /* Init */
-t_image		*ImageInit(void *mlx);
-t_complex	ComplexInit(double re, double im);
-t_fractal	*FractalInit(char *argv);
+t_image		*image_init(void *mlx);
+t_complex	complex_init(double re, double im);
+t_fractal	*fractal_init(char *argv);
 
 /* utils */
-void	Error(char *str);
+void	error(char *str);
 void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 
 void	colors(t_fractal *f);
@@ -73,5 +73,6 @@ void    help();
 
 /* fractals */
 void	mandelbrot(t_fractal *f);
+void	julia(t_fractal *f);
 
 #endif

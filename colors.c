@@ -6,33 +6,43 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/13 19:29:22 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/30 16:18:28 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = image->addr + (y * image->line_length + x * (image->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
+}
+
 void	colors(t_fractal *f)
 {
-	double	pixel;
-	int		i;
-
-	i = 4;
-	double k = 0;
-	pixel = pow(f->z.re, 2.0) + pow(f->z.im, 2.0);
-	while(k < 1)
+	int color; 
+	
+	double t = f->iter / f->max_iter;
+	if (f->iter < 20)
 	{
-		if (pixel > i && pixel < i+1)
-			my_mlx_pixel_put(&f->image, f->x, f->y, f->color);
-		i++;
-		k += 0.1;
-		f->color = (255 - (0.9 * 255)) / k;;
+		t += (1 - t) * 1;
+		color = (t / ((f->color + 1) % 3 + 1) * 255);
+		my_mlx_pixel_put(&f->image, f->x, f->y, color);
 	}
-	
-	
-	//десятеричная система 277335787
-	// if (pixel > 5 && pixel < 6)
-	// 	my_mlx_pixel_put(&f->image, f->x, f->y, 0x1087ceeb); //16теричная 25677547
-
-
+	else if (f->iter > 20 && f->iter < 40)
+	{
+		t += (1 - t) * 10;
+		color = (t / ((f->color + 1) % 3 + 1) * 255);
+		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+	}
+	else if (f->iter > 40 && f->iter < 100)
+	{
+		t += (1 - t) * 1000;
+		color = (t / ((f->color + 1) % 3 + 1) * 255);
+		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+	}
 }
+
+	

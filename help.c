@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:36:39 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/29 17:56:27 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/30 16:46:39 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void    help()
 {
+    ft_putstr_fd("------------------------------\n", 1);
     ft_putstr_fd("--- KEYS FOR USING PROGRAM ---\n", 1);
     ft_putstr_fd("--- Exit             [esc] ---\n", 1);
+    ft_putstr_fd("------------------------------\n", 1);
 }
