@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/30 18:38:39 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:03:14 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ typedef struct	s_fractal {
 	int			x;
 	int			y;
 	int			color;
-	t_complex	factor;
 	t_complex	c;
 	t_complex	z;
 	t_complex	k;
 	t_complex	min;
 	t_complex	max;
+	t_complex	factor;
 	
 }				t_fractal;
 
