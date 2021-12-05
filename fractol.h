@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/30 19:03:14 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/05 18:41:48 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+
 typedef struct	s_image {
 	void	*img;
 	char	*addr;
@@ -31,6 +32,11 @@ typedef struct	s_image {
 	int		line_length;
 	int		endian;
 }				t_image;
+
+typedef	struct		s_color
+{
+	int8_t			channel[4];
+}					t_color;
 
 typedef struct	s_complex {
 	double	im;
@@ -46,7 +52,7 @@ typedef struct	s_fractal {
 	int			max_iter;
 	int			x;
 	int			y;
-	int			color;
+	int			color_type;
 	t_complex	c;
 	t_complex	z;
 	t_complex	k;

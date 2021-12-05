@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/30 18:59:10 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/05 19:41:07 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,21 @@ t_image		*image_init(void *mlx)
 	return (image);
 }
 
+t_color	get_color(t_fractal *f)
+{
+	t_color	color;
+	double	t;
+
+	t = (double)f->iter / f->max_iter;
+	color.channel[0] = 0;
+	color.channel[(0 + f->color_type) % 3 + 1] =
+		(int8_t)(9 * (1 - t) * pow(t, 3) * 255);
+	color.channel[(1 + f->color_type) % 3 + 1] =
+		(int8_t)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
+	color.channel[(2 + f->color_type) % 3 + 1] =
+		(int8_t)(8.5 * pow((1 - t), 3) * t * 255);
+	return (color);
+}
 
 t_complex	complex_init(double re, double im)
 {
@@ -49,7 +64,7 @@ t_fractal	*fractal_init(char *argv)
 	f->max_iter = 100;
 	f->x = 0;
 	f->y = 0;
-	f->color = 0;
+	f->color_type = 0;
 	f->k = complex_init(-0.4, 0.6);
 	f->min = complex_init(-2.0, -2.0);
 	f->max.re = 2.0;

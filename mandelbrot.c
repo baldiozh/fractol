@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/11/30 18:57:44 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/05 18:33:20 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	mandelbrot(t_fractal *f)
 			f->z = complex_init(f->c.re, f->c.im);
 			f->iter = 0;
 			//Проверяем принадлежность точки (будет ли выходить за пределы 5ти)
-			while (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) < 5 && f->iter < f->max_iter)
+			while (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) <= 4 && f->iter < f->max_iter)
 			{
 				f->z = complex_init(
 					pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->c.re,
