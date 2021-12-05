@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:43:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 19:38:49 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/05 19:54:33 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 void	julia(t_fractal *f)
 {
-	double	swap;
+	double	tmp;
 
-	f->y = 0;
 	while (f->y++ < HEIGHT)
 	{
 		f->x = 0;
 		while (f->x++ < WIDTH)
 		{
 			f->iter = 0;
-			f->z.re = (f->x - WIDTH / 2) / (0.25 * WIDTH );
+			f->z.re = (f->x - WIDTH / 2) / (0.25 * WIDTH);
 			f->z.im = (f->y - HEIGHT / 2) / (0.25 * HEIGHT);
 			while (f->iter++ < f->max_iter && (pow(f->z.re, 2.0)
 					+ pow(f->z.im, 2.0) <= 4))
 			{
-				swap = pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->k.re;
+				tmp = pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->k.re;
 				f->z.im = 2 * f->z.re * f->z.im + f->k.im;
-				f->z.re = swap;
+				f->z.re = tmp;
 			}
 			if (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) > 4)
 				colors(f);
