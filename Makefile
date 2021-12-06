@@ -18,7 +18,7 @@ all:
 
 $(NAME):	$(OBJ)
 			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -o $(NAME)
-			@printf "\x1b[32mFractol is ready\n"
+			@printf "\x1b[32mFractol is ready to use!\n"
 
 %.o : 		%.c 
 			@gcc $(CFLAGS) -c $< -o $@

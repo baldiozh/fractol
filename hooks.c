@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 19:58:43 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/05 20:16:05 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	key_press(int keycode, t_fractal *f)
         f->max_iter += 1;
     else if (keycode == 27)
         f->max_iter -= 1;
+    //zoom
+    //move
+    //
 
     return (0);
 }
