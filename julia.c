@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:43:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/06 18:36:40 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 18:38:18 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	julia(t_fractal *f) //z - пиксели, а с - положение мышки
 {
-	// double	tmp;
-
 	//добавить значения для положении мыши для статичной джулии и управление мышью
 	while (f->y++ < HEIGHT)
 	{
@@ -26,7 +24,7 @@ void	julia(t_fractal *f) //z - пиксели, а с - положение мыш
 			f->z.re = (f->x - WIDTH / 2) / (0.25 * WIDTH * f->zoom) + f->x_step;
 			f->z.im = (f->y - HEIGHT / 2) / (0.25 * HEIGHT * f->zoom) + f->y_step;
 			while (f->iter++ < f->max_iter && (pow(f->z.re, 2.0)
-					+ pow(f->z.im, 2.0) <= 4))
+				+ pow(f->z.im, 2.0) <= 4))
 			{
 				f->z = complex_init(
 					pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->k.re, 

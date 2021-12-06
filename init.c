@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/06 17:13:51 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:51:57 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_image		*image_init(void *mlx)
 	if (!image)
 		error("\x1b[31mImage's memory allocation error.\n");
 	image->img = mlx_new_image(mlx, WIDTH, HEIGHT);
+	if (image->img == NULL)
+		error("\x1b[31mImage create error.\n");
 	image->addr = mlx_get_data_addr(image->img, &image->bits_per_pixel, &image->line_length, &image->endian);
 	return (image);
 }

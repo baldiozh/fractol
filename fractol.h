@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/06 17:12:22 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:28:26 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,20 @@ t_complex	complex_init(double re, double im);
 t_fractal	*fractal_init(char *argv);
 
 /* utils */
+
 void	error(char *str);
+void	name_fractal(t_fractal *f);
 void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 
 void	colors(t_fractal *f);
 
 int		key_press(int keycode, t_fractal *f);
+int		mouse_press(int button, t_fractal *f);
+int		mouse_move(t_fractal *f);
 
 void    help();
 void    help_win(t_fractal *f);
+
 
 /* fractals */
 void	mandelbrot(t_fractal *f);

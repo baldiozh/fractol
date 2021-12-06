@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 18:49:45 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 18:48:28 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,11 @@ void	colors(t_fractal *f)
 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
 	}
 }
+
+// t = (double)iteration / (double)max_iteration;
+
+// red = (int)(9 * (1 - t) * pow(t, 3) * 255);
+// green = (int)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
+// blue = (int)(8.5 * pow((1 - t), 3) * t * 255);
 
 	
