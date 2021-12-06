@@ -6,15 +6,15 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:43:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 20:22:11 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 18:36:40 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	julia(t_fractal *f)
+void	julia(t_fractal *f) //z - пиксели, а с - положение мышки
 {
-	double	tmp;
+	// double	tmp;
 
 	//добавить значения для положении мыши для статичной джулии и управление мышью
 	while (f->y++ < HEIGHT)
@@ -23,14 +23,14 @@ void	julia(t_fractal *f)
 		while (f->x++ < WIDTH)
 		{
 			f->iter = 0;
-			f->z.re = (f->x - WIDTH / 2) / (0.25 * WIDTH);
-			f->z.im = (f->y - HEIGHT / 2) / (0.25 * HEIGHT);
+			f->z.re = (f->x - WIDTH / 2) / (0.25 * WIDTH * f->zoom) + f->x_step;
+			f->z.im = (f->y - HEIGHT / 2) / (0.25 * HEIGHT * f->zoom) + f->y_step;
 			while (f->iter++ < f->max_iter && (pow(f->z.re, 2.0)
 					+ pow(f->z.im, 2.0) <= 4))
 			{
-				tmp = pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->k.re;
-				f->z.im = 2 * f->z.re * f->z.im + f->k.im;
-				f->z.re = tmp;
+				f->z = complex_init(
+					pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->k.re, 
+					2 * f->z.re * f->z.im + f->k.im);
 			}
 			if (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) > 4)
 				colors(f);

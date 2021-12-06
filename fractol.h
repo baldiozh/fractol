@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 18:41:48 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:12:22 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ typedef struct	s_fractal {
 	int			x;
 	int			y;
 	int			color_type;
+	double		zoom;
+	double		x_step;
+	double		y_step;
 	t_complex	c;
 	t_complex	z;
 	t_complex	k;
@@ -76,6 +79,7 @@ void	colors(t_fractal *f);
 int		key_press(int keycode, t_fractal *f);
 
 void    help();
+void    help_win(t_fractal *f);
 
 /* fractals */
 void	mandelbrot(t_fractal *f);

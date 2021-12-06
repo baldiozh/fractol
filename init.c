@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 19:41:07 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:13:51 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ t_fractal	*fractal_init(char *argv)
 	f->x = 0;
 	f->y = 0;
 	f->color_type = 0;
+	f->zoom = 1.0;
+	f->x_step = 0;
+	f->y_step = 0;
 	f->k = complex_init(-0.4, 0.6);
 	f->min = complex_init(-2.0, -2.0);
 	f->max.re = 2.0;

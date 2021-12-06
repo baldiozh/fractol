@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/05 18:57:53 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:00:25 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,21 @@ int	main(int argc, char **argv)
 {
 	t_fractal *f;
 
-	if (argc != 2)
+	if (argc > 4)
 		error("\x1b[1;31mEnter a name.\n");
-	f = fractal_init(argv[1]);
-	name_fractal(f);
+	if (argc == 4)
+	{
+		f = fractal_init(argv[1]);
+		name_fractal(f);
+		f->x = ft_atoi(argv[2]);
+		f->y = ft_atoi(argv[3]);
+		ft_putnbr_fd(f->x, 1);
+	}
+	else
+	{
+		f = fractal_init(argv[1]);
+		name_fractal(f);
+	}
 	mlx_hook(f->win, 2, 0, key_press, f);
 	help();
 	mlx_string_put(f->mlx, f->win, 840, 895, 0xfffafa, "H - Help");
