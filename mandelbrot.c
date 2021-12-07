@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 19:29:36 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 21:35:33 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	mandelbrot(t_fractal *f) //z = 0, а с - пиксели
 	
 	mlx_clear_window(f->mlx, f->win);
 	
-	f->factor.re = (f->max.re - f->min.re) / (WIDTH - 1);
-	f->factor.im = (f->max.im - f->min.im) / (HEIGHT - 1);
+	f->factor.re = (f->max.re - f->min.re) / (WIDTH * f->zoom - 1) + f->x_step;
+	f->factor.im = (f->max.im - f->min.im) / (HEIGHT * f->zoom - 1) + f->y_step;
 	while (f->y++ < HEIGHT)
 	{
 		f->c.im = f->max.im - f->y * f->factor.im;
