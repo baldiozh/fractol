@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 20:25:40 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 21:48:44 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 
 	if (argc > 4)
 		error("\x1b[1;31mEnter a name.\n");
-	if (argc == 4)
+	if (argc == 4) /* julia only */
 	{
 		f = fractal_init(argv[1]);
 		name_fractal(f);
@@ -39,7 +39,6 @@ int	main(int argc, char **argv)
 	else
 	{
 		f = fractal_init(argv[1]);
-		//f->image = *image_init(f->mlx);
 		name_fractal(f);
 	}
 	mlx_hook(f->win, 2, 0, key_press, f);
