@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/06 20:27:56 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:01:56 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,13 @@ int	key_press(int keycode, t_fractal *f)
         f->x_step -= 1.0;
     else if (keycode == 124)
         f->x_step += 1.0;
-    //zoom
-    //move
-    //
+    else if (keycode == 8)
+	{
+		if (f->color_type == 2)
+			f->color_type = 0;
+		else
+			f->color_type += 1;
+	}
 
     return (0);
 }
@@ -44,15 +48,15 @@ int	mouse_press(int button, t_fractal *f)
 	ft_bzero(f->image.addr, WIDTH * HEIGHT * f->image.bits_per_pixel);
 	if (button == 4)
 	{
-		f->zoom *= 1.25;
-		f->y_step += (f->y - HEIGHT / 2) * 0.0015 / f->zoom;
-		f->x_step += (f->x - WIDTH / 2) * 0.0015 / f->zoom;
+		f->zoom *= 1.50;
+		f->y_step += (f->y - HEIGHT / 2) * 0.0020 / f->zoom;
+		f->x_step += (f->x - WIDTH / 2) * 0.0020 / f->zoom;
 	}
 	else if (button == 5)
 	{
-		f->y_step += (f->y - HEIGHT / 2) * 0.0015 / f->zoom;
-		f->x_step += (f->x - WIDTH / 2) * 0.0015 / f->zoom;
-		f->zoom *= 0.8;
+		f->y_step += (f->y - HEIGHT / 2) * 0.0020 / f->zoom;
+		f->x_step += (f->x - WIDTH / 2) * 0.0020 / f->zoom;
+		f->zoom *= 0.5;
 	}
 	name_fractal(f);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/06 18:48:28 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:00:45 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,54 @@ void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
 
 void	colors(t_fractal *f)
 {
-	int color; 
+	// int color; 
 	
-	double t = f->iter / f->max_iter;
-	if (f->iter < 20)
+	double t = (double)f->iter / f->max_iter;
+	int pixel = (f->y * f->image.line_length + 4 * f->x);
+	// printf("%d\n", f->image.line_length);
+	// printf("%d\n", pixel);
+	if (f->color_type == 0) /* blue, sky */
 	{
-		t += (1 - t) * 1;
-		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
-		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+		f->image.addr[pixel] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
+		f->image.addr[pixel + 1] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 	}
-	else if (f->iter > 20 && f->iter < 40)
+	else if (f->color_type == 1) /* green, yellow */
 	{
-		t += (1 - t) * 10;
-		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
-		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+		f->image.addr[pixel + 1] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
+		f->image.addr[pixel + 2] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 	}
-	else if (f->iter > 40 && f->iter < 100)
+	else if (f->color_type == 2) /* red, purple */
 	{
-		t += (1 - t) * 1000;
-		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
-		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+		f->image.addr[pixel + 2] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
+		f->image.addr[pixel] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 	}
+	
 }
+
+
+// void	colors(t_fractal *f)
+// {
+// 	int color; 	
+// 	double t = f->iter / f->max_iter;
+// 	if (f->iter < 20)
+// 	{
+// 		t += (1 - t) * 1;
+// 		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
+// 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+// 	}
+// 	else if (f->iter > 20 && f->iter < 40)
+// 	{
+// 		t += (1 - t) * 10;
+// 		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
+// 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+// 	}
+// 	else if (f->iter > 40 && f->iter < 100)
+// 	{
+// 		t += (1 - t) * 1000;
+// 		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
+// 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
+// 	}
+// }
 
 // t = (double)iteration / (double)max_iteration;
 

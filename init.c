@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/06 20:51:57 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 18:59:52 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@ t_image		*image_init(void *mlx)
 	return (image);
 }
 
-t_color	get_color(t_fractal *f)
-{
-	t_color	color;
-	double	t;
+// t_color	get_color(t_fractal *f)
+// {
+// 	int	color;
+// 	double	t;
 
-	t = (double)f->iter / f->max_iter;
-	color.channel[0] = 0;
-	color.channel[(0 + f->color_type) % 3 + 1] =
-		(int8_t)(9 * (1 - t) * pow(t, 3) * 255);
-	color.channel[(1 + f->color_type) % 3 + 1] =
-		(int8_t)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
-	color.channel[(2 + f->color_type) % 3 + 1] =
-		(int8_t)(8.5 * pow((1 - t), 3) * t * 255);
-	return (color);
-}
+// 	t = (double)f->iter / f->max_iter;
+// 	color.channel[0] = 0;
+// 	color.channel[(0 + f->color_type) % 3 + 1] =
+// 		(int8_t)(9 * (1 - t) * pow(t, 3) * 255);
+// 	color.channel[(1 + f->color_type) % 3 + 1] =
+// 		(int8_t)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
+// 	color.channel[(2 + f->color_type) % 3 + 1] =
+// 		(int8_t)(8.5 * pow((1 - t), 3) * t * 255);
+// 	return (color);
+// }
 
 t_complex	complex_init(double re, double im)
 {
@@ -66,7 +66,7 @@ t_fractal	*fractal_init(char *argv)
 	f->max_iter = 100;
 	f->x = 0;
 	f->y = 0;
-	f->color_type = 0;
+	f->color_type = 2;
 	f->zoom = 1.0;
 	f->x_step = 0;
 	f->y_step = 0;
