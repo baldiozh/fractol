@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 19:05:09 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:30:00 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ typedef struct	s_fractal {
 t_image		*image_init(void *mlx);
 t_complex	complex_init(double re, double im);
 t_fractal	*fractal_init(char *argv);
-// t_color		get_color(t_fractal *f);
 
 /* utils */
 

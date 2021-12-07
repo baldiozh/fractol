@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 19:00:45 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:30:34 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,33 +45,6 @@ void	colors(t_fractal *f)
 	}
 	
 }
-
-
-// void	colors(t_fractal *f)
-// {
-// 	int color; 	
-// 	double t = f->iter / f->max_iter;
-// 	if (f->iter < 20)
-// 	{
-// 		t += (1 - t) * 1;
-// 		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
-// 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
-// 	}
-// 	else if (f->iter > 20 && f->iter < 40)
-// 	{
-// 		t += (1 - t) * 10;
-// 		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
-// 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
-// 	}
-// 	else if (f->iter > 40 && f->iter < 100)
-// 	{
-// 		t += (1 - t) * 1000;
-// 		color = (t / ((f->color_type + 1) % 3 + 1) * 255);
-// 		my_mlx_pixel_put(&f->image, f->x, f->y, color);
-// 	}
-// }
-
-// t = (double)iteration / (double)max_iteration;
 
 // red = (int)(9 * (1 - t) * pow(t, 3) * 255);
 // green = (int)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
