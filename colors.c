@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 19:30:34 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:59:14 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
 
 void	colors(t_fractal *f)
 {
-	// int color; 
+	double	t;
+	int		pixel; 
 	
-	double t = (double)f->iter / f->max_iter;
-	int pixel = (f->y * f->image.line_length + 4 * f->x);
+	t = (double)f->iter / f->max_iter;
+	pixel = (f->y * f->image.line_length + 4 * f->x);
 	// printf("%d\n", f->image.line_length);
 	// printf("%d\n", pixel);
 	if (f->color_type == 0) /* blue, sky */
