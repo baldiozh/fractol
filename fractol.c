@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 21:48:44 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:39:54 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 {
 	t_fractal *f;
 
-	if (argc > 4)
+	if (argc > 4 || argc == 1)
 		error("\x1b[1;31mEnter a name.\n");
 	if (argc == 4) /* julia only */
 	{

@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 19:01:56 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:55:28 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,21 @@ int	key_press(int keycode, t_fractal *f)
 {
     (void)f;
     
-	if (keycode == 53)
+	if (keycode == EXIT)
         exit(0);
-    else if (keycode == 24)
+    else if (keycode == PLUS)
         f->max_iter += 1;
-    else if (keycode == 27)
+    else if (keycode == MINUS)
         f->max_iter -= 1;
-    else if (keycode == 4)
-        help_win(f);
-    else if (keycode == 126)
-        f->y_step -= 1.0;
-    else if (keycode == 125)
-        f->y_step += 1.0;
-    else if (keycode == 123)
-        f->x_step -= 1.0;
-    else if (keycode == 124)
-        f->x_step += 1.0;
-    else if (keycode == 8)
+    else if (keycode == UP)
+        f->y_step -= 1.0 / f->zoom;
+    else if (keycode == DOWN)
+        f->y_step += 1.0 / f->zoom;
+    else if (keycode == LEFT)
+        f->x_step -= 1.0 / f->zoom;
+    else if (keycode == RIGHT)
+        f->x_step += 1.0 / f->zoom;
+    else if (keycode == C)
 	{
 		if (f->color_type == 2)
 			f->color_type = 0;
@@ -58,7 +56,7 @@ int	mouse_press(int button, t_fractal *f)
 		f->x_step += (f->x - WIDTH / 2) * 0.0020 / f->zoom;
 		f->zoom *= 0.5;
 	}
-	name_fractal(f);
+	// name_fractal(f);
 	return (0);
 }
 

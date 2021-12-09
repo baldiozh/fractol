@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 20:23:35 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:54:56 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 
 # define WIDTH 900
 # define HEIGHT 900
+
+# define EXIT 53
+# define PLUS 24
+# define MINUS 27
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
+# define C 8
 
 # include "mlx/mlx.h"
 # include "libft/libft.h"
