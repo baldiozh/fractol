@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 16:59:14 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 18:43:54 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	colors(t_fractal *f)
 	t = (double)f->iter / f->max_iter;
 	pixel = (f->y * f->image.line_length + 4 * f->x);
 	// printf("%d\n", f->image.line_length);
-	// printf("%d\n", pixel);
 	if (f->color_type == 0) /* blue, sky */
 	{
 		f->image.addr[pixel] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);

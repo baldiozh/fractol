@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 21:35:33 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 19:24:00 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 
 void	mandelbrot(t_fractal *f) //z = 0, а с - пиксели 
 {
-	// добавить зум и перемещение
-	
 	mlx_clear_window(f->mlx, f->win);
-	
-	f->factor.re = (f->max.re - f->min.re) / (WIDTH * f->zoom - 1) + f->x_step;
-	f->factor.im = (f->max.im - f->min.im) / (HEIGHT * f->zoom - 1) + f->y_step;
+	f->y = 0;
 	while (f->y++ < HEIGHT)
 	{
-		f->c.im = f->max.im - f->y * f->factor.im;
+		f->c.im = f->max.im - f->y * f->y_step;
 		f->x = 0;
 		while (f->x++ < WIDTH)
 		{
 			f->iter = 0;
-			f->c.re = f->min.re + f->x * f->factor.re;
+			f->c.re = f->min.re + f->x * f->x_step;
 			f->z = complex_init(f->c.re, f->c.im);
 			/* Проверяем принадлежность точки (будет ли выходить за пределы 5ти) */
 			while (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) <= 4 && f->iter < f->max_iter)

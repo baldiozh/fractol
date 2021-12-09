@@ -24,7 +24,7 @@ $(NAME):	$(OBJ)
 			@printf "\x1b[34mEnter fractal's name: mandelbrot or julia.\n"
 
 %.o : 		%.c 
-			@gcc $(CFLAGS) -c $< -o $@
+			@gcc $(CFLAGS) -Ofast -c $< -o $@
 
 clean:
 			@rm -rf $(OBJ)

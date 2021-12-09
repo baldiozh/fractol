@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:43:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/07 21:42:47 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:04:53 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@ void	julia(t_fractal *f) //z - пиксели, а с - положение мыш
 {
 	//добавить значения для положении мыши для статичной джулии и управление мышью
 	mlx_clear_window(f->mlx, f->win);
+	f->y = 0;
 	while (f->y++ < HEIGHT)
 	{
 		f->x = 0;
 		while (f->x++ < WIDTH)
 		{
 			f->iter = 0;
-			f->z.re = (f->x - WIDTH / 2) / (0.25 * WIDTH * f->zoom) + f->x_step;
-			f->z.im = (f->y - HEIGHT / 2) / (0.25 * HEIGHT * f->zoom) + f->y_step;
+			f->z.re = f->min.re + f->x_step * f->x;
+			f->z.im = f->max.im - f->y_step * f->y;
 			while (f->iter++ < f->max_iter && (pow(f->z.re, 2.0)
 				+ pow(f->z.im, 2.0) <= 4))
 			{

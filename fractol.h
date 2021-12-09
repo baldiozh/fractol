@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 16:54:56 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 19:48:03 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct	s_fractal {
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
+	int			move;
+
 	
 }				t_fractal;
 
@@ -83,8 +85,8 @@ void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 void	colors(t_fractal *f);
 
 int		key_press(int keycode, t_fractal *f);
-int		mouse_press(int button, t_fractal *f);
-int		mouse_move(t_fractal *f);
+int		mouse_press(int button, int x, int y, t_fractal *f);
+int		mouse_move(int x, int y, t_fractal *f);
 
 void    help();
 void    help_win(t_fractal *f);
