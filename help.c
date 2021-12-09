@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:36:39 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 16:56:50 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:25:37 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ void    help()
 {
     ft_putstr_fd("\x1b[1;32m------------------------------------\n", 1);
     ft_putstr_fd("\x1b[32m-*-*-  KEYS FOR USING PROGRAM  -*-*-\n", 1);
+    ft_putstr_fd("\x1b[32m------------------------------------\n", 1);
     ft_putstr_fd("\x1b[32m-*- Moves          [←][↑][↓][→]  -*-\n", 1);
     ft_putstr_fd("\x1b[32m-*- Iterations     [-][+]        -*-\n", 1);
     ft_putstr_fd("\x1b[32m-*- Color          [C]           -*-\n", 1);
+    ft_putstr_fd("\x1b[32m-*- Reset          [R]           -*-\n", 1);
+    ft_putstr_fd("\x1b[32m-*- Julia's move   [M]           -*-\n", 1);
     ft_putstr_fd("\x1b[32m-*- Exit           [esc]         -*-\n", 1);
     ft_putstr_fd("\x1b[32m------------------------------------\n", 1);
     

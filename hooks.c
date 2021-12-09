@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 20:13:28 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:22:27 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	key_press(int keycode, t_fractal *f)
         f->x_step += 1.0 / f->zoom;
     else if (keycode == C)
 		f->color_type = (f->color_type + 1) % 3;
-	else if (keycode == 49)
+	else if (keycode == M)
 			f->move = !f->move;
-	else if (keycode == 15)
+	else if (keycode == R)
 	{
 		f->min = complex_init(-2.0, -2.0);
 		f->max.re = 2.0;
