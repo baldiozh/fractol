@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 14:44:29 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:40:04 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_fractal	*fractal_init(char *argv);
 /* utils */
 
 void	error(char *str);
-void	name_fractal(t_fractal *f);
+void	start_fractal(t_fractal *f);
 void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 
 void	colors(t_fractal *f);

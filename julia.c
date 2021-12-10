@@ -6,15 +6,14 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:43:58 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 20:04:53 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:37:50 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	julia(t_fractal *f) //z - пиксели, а с - положение мышки
+void	julia(t_fractal *f)
 {
-	//добавить значения для положении мыши для статичной джулии и управление мышью
 	mlx_clear_window(f->mlx, f->win);
 	f->y = 0;
 	while (f->y++ < HEIGHT)

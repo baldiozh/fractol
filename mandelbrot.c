@@ -6,13 +6,13 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 19:24:00 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:37:31 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	mandelbrot(t_fractal *f) //z = 0, а с - пиксели 
+void	mandelbrot(t_fractal *f)
 {
 	mlx_clear_window(f->mlx, f->win);
 	f->y = 0;
@@ -25,7 +25,6 @@ void	mandelbrot(t_fractal *f) //z = 0, а с - пиксели
 			f->iter = 0;
 			f->c.re = f->min.re + f->x * f->x_step;
 			f->z = complex_init(f->c.re, f->c.im);
-			/* Проверяем принадлежность точки (будет ли выходить за пределы 5ти) */
 			while (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) <= 4 && f->iter < f->max_iter)
 			{
 				f->z = complex_init(
@@ -33,7 +32,6 @@ void	mandelbrot(t_fractal *f) //z = 0, а с - пиксели
 					2.0 * f->z.re * f->z.im + f->c.im);
 				f->iter++;
 			}
-			/* Установка цвета точки, если точка не входит в множество */
 			if (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) > 4)
 				colors(f);
 		}
