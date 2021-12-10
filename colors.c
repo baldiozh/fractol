@@ -6,19 +6,11 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 18:43:54 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 21:14:50 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = image->addr + (y * image->line_length + x * (image->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
-}
 
 void	colors(t_fractal *f)
 {
@@ -26,11 +18,15 @@ void	colors(t_fractal *f)
 	int		pixel; 
 	
 	t = (double)f->iter / f->max_iter;
-	pixel = (f->y * f->image.line_length + 4 * f->x);
+	pixel = f->y * f->image.line_length + 4 * f->x;
+	// printf("%d-", pixel);
 	// printf("%d\n", f->image.line_length);
+	// write(1, "jfghdi", 6);
+	// if (pixel > 2000000)
+	// 	pixel = 0;	
 	if (f->color_type == 0) /* blue, sky */
 	{
-		f->image.addr[pixel] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
+		f->image.addr[pixel + 0] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 		f->image.addr[pixel + 1] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 	}
 	else if (f->color_type == 1) /* green, yellow */

@@ -19,9 +19,11 @@ all:
 			@make $(NAME)
 
 $(NAME):	$(OBJ)
-			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -fsanitize=address -o $(NAME)
+			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -o $(NAME) -fsanitize=address -ggdb3
 			@printf "\x1b[32mFractol is ready!\n"
 			@printf "\x1b[34mEnter fractal's name: mandelbrot or julia.\n"
+
+#-fsanitize=address
 
 %.o : 		%.c 
 			@gcc $(CFLAGS) -Ofast -c $< -o $@

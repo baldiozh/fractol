@@ -6,15 +6,15 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 18:30:28 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 21:12:57 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 720
+# define HEIGHT 720
 
 # define EXIT 53
 # define PLUS 24
@@ -82,7 +82,6 @@ t_fractal	*fractal_init(char *argv);
 
 void	error(char *str);
 void	start_fractal(t_fractal *f);
-void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 
 void	colors(t_fractal *f);
 
