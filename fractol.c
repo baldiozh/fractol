@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 15:39:57 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 18:37:37 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	start_fractal(t_fractal *f) 
 {
-	if (ft_strncmp(f->name, "mandelbrot", 10) == 0) //mandelbrot123
+	if (ft_strncmp(f->name, "mandelbrot", ft_strlen(f->name)) == 0)
 			mandelbrot(f);
-	else if(ft_strncmp(f->name, "julia", 5) == 0)
+	else if(ft_strncmp(f->name, "julia", ft_strlen(f->name)) == 0)
 		julia(f);
 	else
 		error("\x1b[31mFractals's name error.\n");
