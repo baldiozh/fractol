@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/09 20:22:12 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 14:44:29 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	my_mlx_pixel_put(t_image *image, int x, int y, int color);
 void	colors(t_fractal *f);
 
 int		key_press(int keycode, t_fractal *f);
+void	recount(t_fractal *f);
 int		mouse_press(int button, int x, int y, t_fractal *f);
 int		mouse_move(int x, int y, t_fractal *f);
 
