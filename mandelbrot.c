@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:26:51 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 20:01:06 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:00:18 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ void	mandelbrot(t_fractal *f)
 			f->iter = 0;
 			f->c.re = f->min.re + f->x * f->x_step;
 			f->z = complex_init(f->c.re, f->c.im);
-			while (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) <= 4 && f->iter < f->max_iter)
+			while (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) <= 4
+				&& f->iter < f->max_iter)
 			{
 				f->z = complex_init(
-					pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->c.re,
-					2.0 * f->z.re * f->z.im + f->c.im);
+						pow(f->z.re, 2.0) - pow(f->z.im, 2.0) + f->c.re,
+						2.0 * f->z.re * f->z.im + f->c.im);
 				f->iter++;
 			}
 			if (pow(f->z.re, 2.0) + pow(f->z.im, 2.0) > 4)

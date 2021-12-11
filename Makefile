@@ -3,7 +3,7 @@ MAKEFLAGS += -s
 NAME		=	fractol
 
 SRC			= 	fractol.c \
-				mandelbrot.c julia.c \
+				mandelbrot.c julia.c burning_ship.c\
 				utils.c init.c colors.c hooks.c help.c key_press.c
 
 OBJ			=	$(patsubst %.c,%.o,$(SRC))
@@ -21,11 +21,11 @@ all:
 $(NAME):	$(OBJ)
 			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -o $(NAME)
 			@printf "\x1b[32mFractol is ready!\n"
-			@printf "\x1b[34mEnter fractal's name: mandelbrot or julia.\n"
+			@printf "\x1b[34mEnter fractal's name:\n"
 
 #-fsanitize=address
 
-%.o : 		%.c 
+%.o : 		%.c
 			@gcc $(CFLAGS) -Ofast -c $< -o $@
 
 clean:
@@ -38,5 +38,7 @@ fclean: 	clean
 			@make fclean -C ./libft/
 
 re: 		fclean all
-			
+
+bonus:		re
+
 .PHONY: 	all clean fclean re

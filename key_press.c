@@ -6,42 +6,49 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:36:06 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 17:27:59 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:14:04 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	key_press(int keycode, t_fractal *f)
+void	control_arrows(int keycode, t_fractal *f)
 {
-	ft_bzero(f->image.addr, WIDTH * HEIGHT * 4);
-	if (keycode == EXIT)
-        exit(0);
-    else if (keycode == PLUS)
-        f->max_iter += 1;
-    else if (keycode == MINUS)
-        f->max_iter -= 1;
-    else if (keycode == UP)
-    {
+	if (keycode == UP)
+	{
 		f->max.im -= f->y_step * 10;
 		f->min.im += f->max.im - f->y_step * HEIGHT;
 	}
-    else if (keycode == DOWN)
+	else if (keycode == DOWN)
 	{
 		f->max.im += f->y_step * 10;
 		f->min.im -= f->max.im - f->y_step * HEIGHT;
 	}
-    else if (keycode == LEFT)
+	else if (keycode == LEFT)
 	{
 		f->max.re -= f->x_step * 10;
 		f->min.re += f->x_step * 10;
 	}
-    else if (keycode == RIGHT)
+	else if (keycode == RIGHT)
 	{
 		f->max.re += f->x_step * 10;
 		f->min.re -= f->x_step * 10;
 	}
-    else if (keycode == C)
+}
+
+int	key_press(int keycode, t_fractal *f)
+{
+	ft_bzero(f->image.addr, WIDTH * HEIGHT * 4);
+	if (keycode == EXIT)
+		exit(0);
+	else if (keycode == PLUS)
+		f->max_iter += 1;
+	else if (keycode == MINUS)
+		f->max_iter -= 1;
+	else if (keycode == UP || keycode == DOWN
+		|| keycode == LEFT || keycode == RIGHT)
+		control_arrows(keycode, f);
+	else if (keycode == C)
 		f->color_type = (f->color_type + 1) % 3;
 	else if (keycode == M)
 		f->move = !f->move;
@@ -55,5 +62,5 @@ int	key_press(int keycode, t_fractal *f)
 		f->y_step = (f->max.im - f->min.im) / HEIGHT;
 	}
 	start_fractal(f);
-    return (0);
+	return (0);
 }

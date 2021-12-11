@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 17:19:35 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:02:19 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-
-typedef struct	s_image {
+typedef struct s_image {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -44,12 +43,12 @@ typedef struct	s_image {
 	int		endian;
 }				t_image;
 
-typedef struct	s_complex {
+typedef struct s_complex {
 	double	im;
 	double	re;
 }				t_complex;
 
-typedef struct	s_fractal {
+typedef struct s_fractal {
 	void		*mlx;
 	void		*win;
 	t_image		image;
@@ -71,7 +70,6 @@ typedef struct	s_fractal {
 	t_complex	factor;
 	int			move;
 
-	
 }				t_fractal;
 
 /* Init */
@@ -81,23 +79,24 @@ t_fractal	*fractal_init(char *argv);
 
 /* utils */
 
-void	error(char *str);
-void	start_fractal(t_fractal *f);
+void		error(char *str);
+void		start_fractal(t_fractal *f);
 
-void	colors(t_fractal *f);
+void		colors(t_fractal *f);
 
-int		key_press(int keycode, t_fractal *f);
-void	zoom_recount(t_fractal *f, int x, int y);
-int		mouse_press(int button, int x, int y, t_fractal *f);
-int		mouse_move(int x, int y, t_fractal *f);
-int		red_cross(void);
+int			key_press(int keycode, t_fractal *f);
+void		zoom_recount(t_fractal *f, int x, int y);
+int			mouse_press(int button, int x, int y, t_fractal *f);
+int			mouse_move(int x, int y, t_fractal *f);
+int			red_cross(void);
 
-void    help();
-void    help_win(t_fractal *f);
-
+void		help(void);
+void		help_win(t_fractal *f);
 
 /* fractals */
-void	mandelbrot(t_fractal *f);
-void	julia(t_fractal *f);
+void		mandelbrot(t_fractal *f);
+void		julia(t_fractal *f);
+void		julia_3x(t_fractal *f);
+void		burning_ship(t_fractal *f);
 
 #endif

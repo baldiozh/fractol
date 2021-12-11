@@ -6,38 +6,39 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:43:28 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 15:59:33 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 20:59:16 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_image		*image_init(void *mlx)
+t_image	*image_init(void *mlx)
 {
 	t_image	*image;
-	
+
 	image = (t_image *)malloc(sizeof(t_image));
 	if (!image)
 		error("\x1b[31mImage's memory allocation error.\n");
 	image->img = mlx_new_image(mlx, WIDTH, HEIGHT);
 	if (image->img == NULL)
 		error("\x1b[31mImage create error.\n");
-	image->addr = mlx_get_data_addr(image->img, &image->bits_per_pixel, &image->line_length, &image->endian);
+	image->addr = mlx_get_data_addr(image->img, &image->bits_per_pixel,
+			&image->line_length, &image->endian);
 	return (image);
 }
 
 t_complex	complex_init(double re, double im)
 {
-    t_complex complex;
-    
-    complex.re = re;
-    complex.im = im;
-    return (complex);
+	t_complex	complex;
+
+	complex.re = re;
+	complex.im = im;
+	return (complex);
 }
 
 t_fractal	*fractal_init(char *argv)
 {
-	t_fractal *f;
+	t_fractal	*f;
 
 	f = (t_fractal *)malloc(sizeof(t_fractal));
 	if (!f)
@@ -54,7 +55,6 @@ t_fractal	*fractal_init(char *argv)
 	f->color_type = 0;
 	f->stat = 0;
 	f->zoom = 1.0;
-	// f->k = complex_init(-0.1, 0.9);
 	f->min = complex_init(-2.0, -2.0);
 	f->max.re = 2.0;
 	f->max.im = f->min.im + (f->max.re - f->min.re) * (HEIGHT / WIDTH);
