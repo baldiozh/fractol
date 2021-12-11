@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:36:06 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 15:31:22 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:27:59 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	key_press(int keycode, t_fractal *f)
 		f->move = !f->move;
 	else if (keycode == R)
 	{
+		f->max_iter = 100;
 		f->min = complex_init(-2.0, -2.0);
 		f->max.re = 2.0;
 		f->max.im = f->min.im + (f->max.re - f->min.re) * (HEIGHT / WIDTH);

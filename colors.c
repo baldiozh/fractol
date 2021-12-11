@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 16:00:43 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:29:01 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	colors(t_fractal *f) //segv when too big win
 		f->image.addr[pixel + 2] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 		f->image.addr[pixel] = (int)(20 * pow((1 - t), 2) * pow(t, 2) * 255);
 	}
-	
 }
 
 	

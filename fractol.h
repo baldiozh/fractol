@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 15:48:43 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:19:35 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	start_fractal(t_fractal *f);
 void	colors(t_fractal *f);
 
 int		key_press(int keycode, t_fractal *f);
-void	recount(t_fractal *f, int x, int y);
+void	zoom_recount(t_fractal *f, int x, int y);
 int		mouse_press(int button, int x, int y, t_fractal *f);
 int		mouse_move(int x, int y, t_fractal *f);
 int		red_cross(void);
