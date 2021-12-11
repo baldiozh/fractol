@@ -6,13 +6,13 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:39:41 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 22:13:54 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 16:00:43 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	colors(t_fractal *f)
+void	colors(t_fractal *f) //segv when too big win
 {
 	double	t;
 	int		pixel; 

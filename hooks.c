@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 22:24:24 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 16:23:27 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int	mouse_press(int button, int x, int y, t_fractal *f)
 
 int	mouse_move(int x, int y, t_fractal *f)
 {
- 	if (f->move)
+ 	if (f->move && f->stat == 0)
 	{
 		ft_bzero(f->image.addr, WIDTH * HEIGHT * 4);
-		f->k.im = (y - HEIGHT / 2) / (0.25 * HEIGHT * f->zoom) + f->y_step;
 		f->k.re = (x - WIDTH / 2) / (0.25 * WIDTH * f->zoom) + f->x_step;
+		f->k.im = (y - HEIGHT / 2) / (0.25 * HEIGHT * f->zoom) + f->y_step;
 	}
 	start_fractal(f);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 22:24:16 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 15:48:43 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct	s_fractal {
 	int			x;
 	int			y;
 	int			color_type;
+	int			stat;
 	double		zoom;
 	double		x_step;
 	double		y_step;
