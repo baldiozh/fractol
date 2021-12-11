@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/11 17:16:48 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 17:38:52 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	start_fractal(t_fractal *f)
 {
 	if (ft_strncmp(f->name, "mandelbrot\0", 11) == 0)
 		mandelbrot(f);
-	else if (ft_strncmp(f->name, "julia", ft_strlen(f->name)) == 0)
+	else if (ft_strncmp(f->name, "julia\0", 6) == 0)
 		julia(f);
 	else
-		error("\x1b[31mFractals's name error.\n");
+		error("\x1b[31mEnter fractal's name:\n-mandelbrot;\n-julia.\n");
 }
 
 int	main(int argc, char **argv)
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	t_fractal *f;
 
 	if (argc > 4 || argc < 2)
-		error("\x1b[1;31mEnter a name.\n");
+		error("\x1b[31mEnter fractal's name:\n-mandelbrot;\n-julia.\n");
 	f = fractal_init(argv[1]);
 	if (argc == 2)
 		f->k = complex_init(-0.1, 0.9);
