@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:54:30 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 21:12:57 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 22:24:16 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		key_press(int keycode, t_fractal *f);
 void	recount(t_fractal *f, int x, int y);
 int		mouse_press(int button, int x, int y, t_fractal *f);
 int		mouse_move(int x, int y, t_fractal *f);
+int		red_cross(void);
 
 void    help();
 void    help_win(t_fractal *f);

@@ -19,7 +19,7 @@ all:
 			@make $(NAME)
 
 $(NAME):	$(OBJ)
-			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -o $(NAME) -fsanitize=address -ggdb3
+			@gcc $(CFLAGS) mlx/libmlx.a $(OBJ) $(MLXFLAGS) ./libft/libft.a -o $(NAME)
 			@printf "\x1b[32mFractol is ready!\n"
 			@printf "\x1b[34mEnter fractal's name: mandelbrot or julia.\n"
 

@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 21:17:52 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 19:14:59 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/10 22:24:24 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,9 @@ int	mouse_move(int x, int y, t_fractal *f)
 	}
 	start_fractal(f);
 	return (0);
+}
+
+int	red_cross(void)
+{
+	exit(EXIT_SUCCESS);
 }

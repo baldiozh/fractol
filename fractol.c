@@ -6,7 +6,7 @@
 /*   By: gmckinle <gmckinle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:23:44 by gmckinle          #+#    #+#             */
-/*   Updated: 2021/12/10 20:13:13 by gmckinle         ###   ########.fr       */
+/*   Updated: 2021/12/11 15:33:33 by gmckinle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 	mlx_hook(f->win, 2, 0, key_press, f);
 	mlx_mouse_hook(f->win, mouse_press, f);
 	mlx_hook(f->win, 6, 0, mouse_move, f);
-	//help();
+	mlx_hook(f->win, 17, 0, red_cross, f);
+	help();
 	mlx_loop(f->mlx);	
 	return (0);
 }
