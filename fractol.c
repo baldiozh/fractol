@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	t_fractal	*f;
 
 	if (argc > 4 || argc < 2)
-		error("\x1b[31mEnter fractal's name:\n-mandelbrot;\n-julia.\n");
+		error("\x1b[31mEnter fractal's name:\n-mandelbrot;\n-julia;\n-ship.\n");
 	f = fractal_init(argv[1]);
 	if (argc == 2)
 		f->k = complex_init(-0.1, 0.9);
